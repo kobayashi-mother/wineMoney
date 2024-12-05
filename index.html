@@ -30,13 +30,15 @@
       align-items: center;
       gap: 10px;
       margin-bottom: 10px;
+      flex-wrap: wrap;
     }
     .participant input {
-      flex: 1;
+      flex: 1 1 calc(50% - 20px);
       padding: 8px;
       font-size: 16px;
       border: 1px solid #ddd;
       border-radius: 4px;
+      min-width: 120px;
     }
     .participant button {
       background: #ff5c5c;
@@ -46,18 +48,19 @@
       border-radius: 50%;
       cursor: pointer;
       font-size: 16px;
+      flex: 0 0 auto;
     }
     .participant button:hover {
       background: #ff2e2e;
     }
     .actions {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-top: 20px;
     }
     .actions button {
-      flex: 1;
-      margin: 0 5px;
+      flex: 1 1 calc(50% - 10px);
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
@@ -91,6 +94,31 @@
     }
     .transaction strong {
       color: #007BFF;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+      .participant input {
+        flex: 1 1 100%;
+      }
+      .actions button {
+        flex: 1 1 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 20px;
+      }
+      .participant input {
+        font-size: 14px;
+      }
+      .actions button {
+        font-size: 14px;
+      }
+      .transaction {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
